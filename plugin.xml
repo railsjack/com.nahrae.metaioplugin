@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.nahrae.metaioplugin"
+        version="1.1.4">
+
+
+    <name>LibreCordovaMetaio</name>
+
+    <js-module src="www/metaiocordova.js" name="metaiocordova">
+        <clobbers target="navigator.metaio"/>
+    </js-module>
+
+
+    <!-- IOS PLATFORM -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="Metaio">
+                <param name="ios-package" value="Metaio"/>
+                <param name="onload" value="true"/>
+            </feature>
+            <feature name="MetaioCloud">
+                <param name="ios-package" value="MetaioCloud"/>
+                <param name="onload" value="true"/>
+            </feature>
+
+
+        </config-file>
+
+
+        <!-- AugmentedReality -->
+
+        <header-file src="src/ios/ARViewController.h"/>
+        <source-file src="src/ios/ARViewController.mm" compiler-flags="-fno-objc-arc"/>
+        <resource-file src="src/ios/ARViewController.xib"/>
+
+        <!-- AugmentedReality/Extras -->
+
+        <header-file src="src/ios/ASImageSharingViewController.h"/>
+        <source-file src="src/ios/ASImageSharingViewController.m" compiler-flags="-fno-objc-arc"/>
+        <resource-file src="src/ios/ASImageSharingViewController.xib"/>
+
+        <!-- Assets -->
+
+        <resource-file src="src/ios/arel.js"/>
+        <resource-file src="src/ios/arelConfig.xml"/>
+        <resource-file src="src/ios/arelGlue1.js"/>
+        <resource-file src="src/ios/arelTemplate.html"/>
+        <resource-file src="src/ios/metaioman_target.png"/>
+        <resource-file src="src/ios/metaioman.md2"/>
+        <resource-file src="src/ios/metaioman.png"/>
+        <resource-file src="src/ios/template.css"/>
+        <resource-file src="src/ios/TrackingData_MarkerlessFast.xml"/>
+
+        <!-- No Target -->
+
+        <header-file src="src/ios/ARViewDelegate.h"/>
+
+        <header-file src="src/ios/ARELViewController.h"/>
+        <source-file src="src/ios/ARELViewController.mm" compiler-flags="-fno-objc-arc"/>
+        <resource-file src="src/ios/ARELViewController.xib"/>
+
+        <header-file src="src/ios/EAGLView.h"/>
+        <source-file src="src/ios/EAGLView.mm" compiler-flags="-fno-objc-arc"/>
+
+        <source-file src="src/ios/Metaio.mm"/>
+
+        <source-file src="src/ios/MetaioCloud.mm"/>
+        <source-file src="src/ios/MetaioCloud.h"/>
+
+        <header-file src="src/ios/MetaioSDKViewController.h"/>
+        <source-file src="src/ios/MetaioSDKViewController.mm" compiler-flags="-fno-objc-arc"/>
+
+
+        <header-file src="src/ios/MetaioViewController.h"/>
+        <source-file src="src/ios/MetaioViewController.mm" compiler-flags="-fno-objc-arc"/>
+        <resource-file src="src/ios/MetaioViewController.xib"/>
+
+        <!-- immagini AugmentedReality/Extras -->
+
+        <resource-file src="src/ios/btnFacebook.png"/>
+        <resource-file src="src/ios/btnFacebook@2x.png"/>
+        <resource-file src="src/ios/btnSave.png"/>
+        <resource-file src="src/ios/btnSave@2x.png"/>
+        <resource-file src="src/ios/btnTwitter.png"/>
+        <resource-file src="src/ios/btnTwitter@2x.png"/>
+
+        <!-- immagini AugmentedReality/Resources/images -->
+
+        <resource-file src="src/ios/bottomBarWebView.png"/>
+        <resource-file src="src/ios/bottomBarWebView@2x.png"/>
+        <resource-file src="src/ios/btnBlue.png"/>
+        <resource-file src="src/ios/btnBlue@2x.png"/>
+        <resource-file src="src/ios/btnBlueAct.png"/>
+        <resource-file src="src/ios/btnBlueAct@2x.png"/>
+        <resource-file src="src/ios/btnDkGray.png"/>
+        <resource-file src="src/ios/btnDkGray@2x.png"/>
+        <resource-file src="src/ios/btnDkGrayAct.png"/>
+        <resource-file src="src/ios/btnDkGrayAct@2x.png"/>
+        <resource-file src="src/ios/btnWebBack.png"/>
+        <resource-file src="src/ios/btnWebBack@2x.png"/>
+        <resource-file src="src/ios/btnWebBackAct.png"/>
+        <resource-file src="src/ios/btnWebBackAct@2x.png"/>
+        <resource-file src="src/ios/btnWebClose.png"/>
+        <resource-file src="src/ios/btnWebClose@2x.png"/>
+        <resource-file src="src/ios/btnWebCloseAct.png"/>
+        <resource-file src="src/ios/btnWebCloseAct@2x.png"/>
+        <resource-file src="src/ios/btnWebForward.png"/>
+        <resource-file src="src/ios/btnWebForward@2x.png"/>
+        <resource-file src="src/ios/btnWebForwardAct.png"/>
+        <resource-file src="src/ios/btnWebForwardAct@2x.png"/>
+        <resource-file src="src/ios/btnWebReload.png"/>
+        <resource-file src="src/ios/btnWebReload@2x.png"/>
+        <resource-file src="src/ios/btnWebReloadAct.png"/>
+        <resource-file src="src/ios/btnWebReloadAct@2x.png"/>
+        <resource-file src="src/ios/btnWebStop.png"/>
+        <resource-file src="src/ios/btnWebStop@2x.png"/>
+        <resource-file src="src/ios/btnWebStopAct.png"/>
+        <resource-file src="src/ios/btnWebStopAct@2x.png"/>
+
+        <!-- bundle e framework -->
+        <!-- AugmentedReality/Resources -->
+
+        <resource-file src="src/ios/MetaioPlugin.bundle"/>
+        <resource-file src="src/ios/WebViewViewController.xib"/>
+
+        <!-- No Target -->
+        <framework src="src/ios/metaioSDK.framework" custom="true"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="CFNetwork.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="OpenGLES.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="CoreLocation.framework"/>
+        <framework src="CoreMotion.framework"/>
+        <framework src="CoreVideo.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="Twitter.framework"/>
+        <framework src="Social.framework"/>
+        <framework src="EventKit.framework"/>
+        <framework src="EventKitUI.framework"/>
+        <framework src="libz.dylib"/>
+        <framework src="libXML2.dylib"/>
+
+    </platform>
+
+    <!-- ANDROID PLATFORM -->
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MetaioCloud">
+                <param name="android-package" value="com.nahrae.metaioplugin.MetaioCloud"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <!-- MANIFEST -->
+
+          <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <uses-library android:name="com.google.android.maps" android:required="true" />
+    <activity 
+        android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" 
+        android:name="com.nahrae.metaioplugin.MetaioCloudARViewLibreActivity" 
+        android:screenOrientation="fullSensor" 
+        android:theme="@style/Theme.Fullscreen" />
+    
+    <activity 
+            android:configChanges="orientation" 
+            android:name="com.nahrae.metaioplugin.ShareViewActivity" 
+            android:theme="@style/Theme.Fullscreen" />
+
+    <activity 
+        android:name="com.nahrae.metaioplugin.POIDetailDialog" 
+        android:theme="@style/Theme.POIDialog" />
+
+    <activity 
+        android:configChanges="orientation" 
+        android:name="com.nahrae.metaioplugin.WebViewActivity" 
+        android:theme="@style/Theme.Fullscreen" />
+    
+     <activity 
+        android:name="com.metaio.cloud.plugin.view.POIDetailDialog" 
+        android:theme="@style/Theme.POIDialog">
+        </activity>
+        
+     <activity 
+            android:configChanges="orientation" 
+            android:name="com.metaio.cloud.plugin.view.WebViewActivity" 
+            android:theme="@style/Theme.Fullscreen">
+     </activity>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_CALENDAR" />-->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.compass" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+        </config-file>
+
+
+
+        <!-- Metaio Cloud Plugin FILES-->
+
+        <source-file src="src/android/src/com/nahrae/metaioplugin/MetaioCloud.java"
+                     target-dir="src/com/nahrae/metaioplugin"/>
+        <source-file src="src/android/src/com/nahrae/metaioplugin/MetaioCordovaBridge.java"
+                     target-dir="src/com/nahrae/metaioplugin"/>
+        <source-file src="src/android/src/com/nahrae/metaioplugin/MetaioCloudARViewLibreActivity.java"
+                     target-dir="src/com/nahrae/metaioplugin"/>
+        <source-file src="src/android/src/com/nahrae/metaioplugin/ShareViewActivity.java"
+                     target-dir="src/com/nahrae/metaioplugin"/>
+       <!-- <source-file src="src/android/src/com/nahrae/metaioplugin/SplashActivity.java"
+                     target-dir="src/com/nahrae/metaioplugin"/> -->
+        <source-file src="src/android/src/com/nahrae/metaioplugin/Utils.java"
+                     target-dir="src/com/nahrae/metaioplugin"/>
+
+
+        <!-- Metaio Resources -->
+
+
+        <resource-file src="src/android/res/layout/arview.xml" target="res/layout/arview.xml"/>
+        <resource-file src="src/android/res/layout/main.xml" target="res/layout/main.xml"/>
+        <resource-file src="src/android/res/layout/shareviewscreen.xml" target="res/layout/shareviewscreen.xml"/>
+        <resource-file src="src/android/res/layout-land/main.xml" target="res/layout-land/main.xml"/>
+
+        <resource-file src="src/android/res/values/channelid.xml" target="res/values/channelid.xml"/>
+      <resource-file src="src/android/res/values/colors.xml" target="res/values/colors.xml"/>
+        <resource-file src="src/android/res/values/dimen.xml" target="res/values/dimen.xml"/>
+     <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml"/>
+        <resource-file src="src/android/res/values/theme.xml" target="res/values/theme.xml"/>
+
+        <resource-file src="src/android/res/values-v11/theme.xml" target="res/values-v11/theme.xml"/>
+
+        
+
+
+    </platform>
+
+
+</plugin>
